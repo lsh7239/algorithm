@@ -19,24 +19,7 @@ public class Level1_1 {
     	
         String answer = "";
         
-        // #1 for
-        for(int i = 0; i<participant.length; i++) {
-        	boolean finish = false;
-        	
-        	for(int j = 0 ; j<completion.length ; j++) {
-        		if(participant[i] == completion[j]) {
-        			finish = true;
-        			break;
-        		}
-        	}
-        	
-        	if(finish == false) {
-        		answer=participant[i];
-        		break;
-        	}
-        }
-        
-        // #2 HashCode + Map
+        // #1. HashCode + Map
         Map<String, Long> participantMap = Stream.of(participant)
         		.collect(Collectors.groupingBy(x-> x, Collectors.counting()));
         
@@ -46,7 +29,8 @@ public class Level1_1 {
         
         answer = participantMap.entrySet().stream().filter(e -> e.getValue()%2 == 1).findFirst().get().getKey();
         
-        // #3 Sort
+        
+        // #2. Sorting
         Arrays.sort(participant);
         Arrays.sort(completion);
         int i = 0;
@@ -54,7 +38,7 @@ public class Level1_1 {
         for(; i< completion.length ; i++) {
         	if(!participant[i].equals(completion[i])) {
         		answer = participant[i];
-        		break;
+        		return answer;
         	}
         }
         
