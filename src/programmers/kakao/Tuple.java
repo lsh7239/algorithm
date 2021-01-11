@@ -18,6 +18,9 @@ public class Tuple {
 	}
 	
     public int[] solution(String s) {
+    	
+    	String[] test = s.replaceAll("[{]", " ").replaceAll("[}]", " ").trim().split(" , ");
+    	
     	s = s.substring(1, s.length()-1);
     	String p = "[{](.*?)[}]";
     	Pattern pattern = Pattern.compile(p);
