@@ -25,7 +25,9 @@ public class Scoville {
                 break;
             }
             answer ++;
+            // 시간 초과의 원인 중 하나
             Arrays.sort(scoville);
+
             int[] newScoville = new int[scoville.length - 1];
             int newScv = scoville[0] + scoville[1] * 2;
             newScoville[0] = newScv;
