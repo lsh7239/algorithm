@@ -1,4 +1,4 @@
-package programmers.kakao;
+package programmers.kakao.blind_2021;
 
 import java.util.*;
 import java.util.stream.Collectors;
