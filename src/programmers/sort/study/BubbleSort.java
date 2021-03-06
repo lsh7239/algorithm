@@ -3,16 +3,13 @@ package programmers.sort.study;
 public class BubbleSort {
 
     public static void bubble(int[] arr){
-        // i 와 i+1을 비교하여 swap
-        boolean isFin = false;
-        while (!isFin){
-            isFin = true;
-            for(int i = 0; i< arr.length-1 ; i++){
-                if(arr[i] > arr[i+1]){
-                    int temp = arr[i+1];
-                    arr[i+1] = arr[i];
-                    arr[i] = temp;
-                    isFin = false;
+
+        for(int i = 0 ; i< arr.length ; i++){
+            for(int j = 0; j< arr.length-1 ; j++){
+                if(arr[j] > arr[j+1]){
+                    int temp = arr[j+1];
+                    arr[j+1] = arr[j];
+                    arr[j] = temp;
 
                     Print.print(arr);
                     System.out.println();
