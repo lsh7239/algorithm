@@ -1,4 +1,4 @@
-package programmers.graph;
+package programmers.kakao.blind_2021;
 
 public class Fare {
 
